@@ -59,16 +59,18 @@ node
 
 Edit the file `inventory/my-cluster/group_vars/all.yml` to match your environment. In my case I had to change the variable `ansible_user` y `k3s_version`
 
+{% raw %}
 ```bash
 $ cat all.yml
 ---
 k3s_version: v1.23.6+k3s1
 ansible_user: pi
 systemd_dir: /etc/systemd/system
-master_ip: "{{ hostvars[groups['master'][0]]['ansible_host'] | default(groups['master'][0]) }}"
+master_ip: " {{ hostvars[groups['master'][0]]['ansible_host'] | default(groups['master'][0]) }} "
 extra_server_args: ""
 extra_agent_args: ""
 ```
+{% endraw %}
 
 ### Linux cgroups
 
