@@ -40,7 +40,7 @@ $ vagrant plugin install vagrant-guest_ansible
 
 Inside a `Vagrantfile` add a variable `provisioner` which depending on the platform you are using will use the `guest_ansible` provisioner or the default ansible provisioner. 
 
-```vagrantfile
+```ruby
 Vagrant.configure("2") do |config|
 
   config.vm.box = "generic/ubuntu2204"
